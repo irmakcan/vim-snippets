@@ -43,3 +43,42 @@ snippet au
 	augroup end
 snippet bun
 	Bundle '${1}'
+
+
+#imported from another lib, test before use
+#snippet try
+#	try
+#		${2}
+#	catch /${1}/
+#	endtry
+#
+#snippet com
+#	command! -nargs=${1:number_of_args} ${2:other_params} ${2:name} ${2:command}
+#
+#snippet au
+#	autocmd ${1:events} ${2:pattern} ${3:command}
+#
+#snippet ife
+#	if ${1}
+#		${2}
+#	else
+#	endif
+#
+#snippet func
+#	"Function: $1
+#	"Desc: ${3:description}
+#	"
+#	"Arguments:
+#	"${4}
+#	function! ${1:name}(${2})
+#		${5}
+#	endfunction
+#
+#snippet if
+#	if ${1}
+#		${2}
+#	endif
+#
+#snippet log
+#	echomsg ${1}
+#

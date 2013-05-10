@@ -967,3 +967,1309 @@ snippet shared
 	shared_examples "${1:shared examples name}" ${2}
 snippet itb
 	it_behaves_like "${1:shared examples name}"${2}
+
+
+
+#imported from another lib, test before use
+# ruby-rails
+#
+#snippet ist
+#	<%= image_submit_tag("<+agree.png+>"<+<+, :id => "<+id+>"+><+, :name => "<+name+>"+><+, :class => "<+class+>"+><+, :disabled => <+false+>+>+>) %>
+#
+#snippet vn
+#	validates_numericality_of :${1:attribute}
+#
+#snippet vi
+#	validates_inclusion_of :${1:attribute}, :in => %w(${2: mov avi })
+#
+#snippet mapwo
+#	${1:map}.with_options :${2:controller} => '${3:thing}' do |$3|
+#		${4}
+#	end
+#
+#snippet xput
+#	xhr :put, :${1:update}, :id => ${2:1}, :${3:object} => { ${4} }${5}
+#
+#snippet tci
+#	t.integer :${1:title}
+#	${2}
+#
+#snippet crw
+#	cattr_accessor :${1:attr_names}
+#
+#snippet logf
+#	logger.fatal { "${1:message}" }${2}
+#
+#snippet sha1
+#	Digest::SHA1.hexdigest(${1:string})
+#
+#snippet tcr
+#	t.references :<+taggable+><+, :polymorphic => <+{ :default => '<+Photo+>' }+>+>
+#	<++>
+#
+#snippet defdestroy
+#	def destroy
+#		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+#		@$1.destroy
+#
+#		respond_to do |wants|
+#			wants.html { redirect_to($1s_url) }
+#			wants.xml  { head :ok }
+#		end
+#	end${3}
+#
+#snippet tcti
+#	t.time :${1:title}
+#	${2}
+#
+#snippet tcb
+#	t.boolean :${1:title}
+#	${2}
+#
+#snippet va
+#	validates_associated :${1:attribute}
+#
+#snippet tcd
+#	t.decimal :<+title+><+<+, :precision => <+10+>+><+, :scale => <+2+>+>+>
+#	<++>
+#
+#snippet rf
+#	render :file => "${1:filepath}"
+#
+#snippet rfu
+#	render :file => "${1:filepath}", :use_full_path => ${2:false}
+#
+#snippet mct
+#	create_table :${1:table_name} do |t|
+#		t.column :${2:name}, :${3:type}
+#	end
+#
+#snippet vc
+#	validates_confirmation_of :${1:attribute}
+#
+#snippet ho
+#	has_one :${1:object}
+#
+#snippet xget
+#	xhr :get, :<+show+><+, :id => <+1+>+><++>
+#
+#snippet rp
+#	render :partial => "${1:item}"
+#
+#snippet rps
+#	render :partial => "${1:item}", :status => ${2:500}
+#
+#snippet rpo
+#	render :partial => "<+item+>", :object => <+@<+item+>+>
+#
+#snippet rt
+#	render :text => "${1:text to render}"
+#
+#snippet artp
+#	assert_redirected_to <+<+model+>_path(<+@<+model+>+>)+>
+#
+#snippet tref
+#	t.references :${1:model}
+#
+#snippet tcdt
+#	t.datetime :${1:title}
+#	${2}
+#
+#snippet mrmc
+#	remove_column :${1:table}, :${2:column}
+#
+#snippet bf
+#	before_filter :${1:method}
+#
+#snippet tcf
+#	t.float :${1:title}
+#	${2}
+#
+#snippet rns
+#	render :nothing => ${1:true}, :status => ${2:401}
+#
+#snippet trc
+#	t.remove :${1:column}
+#
+#snippet i18
+#	I18n.t('${1:type.key}')${2}
+#
+#snippet xpost
+#	xhr :post, :${1:create}, :${2:object} => { ${3} }
+#
+#snippet tcl
+#	t.integer :lock_version, :null => false, :default => 0
+#	${1}
+#
+#snippet mapca
+#	${1:map}.catch_all "*${2:anything}", :controller => "${3:default}", :action => "${4:error}"${5}
+#
+#snippet rts
+#	render :text => "${1:text to render}", :status => ${2:401}
+#
+#snippet ru
+#	render :update do |${1:page}|
+#		$1.${2}
+#	end
+#
+#snippet asrj
+#	assert_rjs :<+replace+>, <+"<+dom id+>"+>
+#
+#snippet asnd
+#	assert_no_difference "${1:Model}.${2:count}" do
+#		${3}
+#	end
+#
+#snippet mcol
+#	remove_column :${1:table}, :${2:column}
+#
+#snippet habtm
+#	has_and_belongs_to_many :${1:object}, :join_table => "${2:table_name}", :foreign_key => "${3}_id"${4}
+#
+#snippet migration
+#	class ${1:`Snippet_MigrationNameFromFilename()`} < ActiveRecord::Migration
+#		def self.up
+#			${2}
+#		end
+#
+#		def self.down
+#		end
+#	end
+#
+#snippet rpc
+#	render :partial => "<+item+>", :collection => <+@<+item+>s+>
+#
+#snippet tch
+#	t.change :<+name+><+, :<+string+><+, :<+limit+> => <+80+>+>+>
+#	<++>
+#
+#snippet flash
+#	flash[:${1:notice}] = "${2}"
+#
+#snippet xdelete
+#	xhr :delete, :${1:destroy}, :id => ${2:1}${3}
+#
+#snippet finf
+#	find(:first<+, :conditions => ['<+<+field+> = ?+>', <+true+>]+>)
+#
+#snippet hm
+#	has_many :${1:object}
+#
+#snippet mrw
+#	mattr_accessor :${1:attr_names}
+#
+#snippet asd
+#	assert_difference "${1:Model}.${2:count}", $1 do
+#		${3}
+#	end
+#
+#snippet vpo
+#	validates_presence_of :${1:attribute}
+#
+#snippet loge
+#	logger.error { "${1:message}" }${2}
+#
+#snippet tre
+#	t.rename :<+old_column_name+>, :<+new_column_name+>
+#	<++>
+#
+#snippet mac
+#	add_column :${1:table}, :${2:column}, :${3:type}
+#
+#snippet rpl
+#	render :partial => "<+item+>", :locals => { :<+item+> => <+@<+item+>+><++> }
+#
+#snippet artpp
+#	assert_redirected_to <+<+model+>s_path+>
+#
+#snippet logd
+#	logger.debug { "${1:message}" }${2}
+#
+#snippet mcht
+#	change_table :${1:table_name} do |t|
+#		${2}
+#	end
+#
+#snippet pa
+#	params[:${1:id}]${2}
+#
+#snippet fini
+#	find(<+id+>)
+#
+#snippet ass
+#	assert_select '<+path+>'<+, :<+text+> => <+'<+inner_html+>'+>+> <+do<++>+>
+#
+#snippet defnew
+#	def new
+#		@${1:model_class_name} = ${2:ModelClassName}.new
+#
+#		respond_to do |wants|
+#			wants.html # new.html.erb
+#			wants.xml  { render :xml => @$1 }
+#		end
+#	end${3}
+#
+#snippet mrc
+#	remove_column :${1:column}
+#
+#snippet logi
+#	logger.info { "${1:message}" }${2}
+#
+#snippet tcbi
+#	t.binary :<+title+><+, :limit => <+2+>.megabytes+>
+#	<++>
+#
+#snippet finl
+#	find(:last<+, :conditions => ['<+<+field+> = ?+>', <+true+>]+>)
+#
+#snippet artnp
+#	assert_redirected_to <+<+parent+>_<+child+>_path(<+@<+parent+>+>, <+@<+child+>+>)+>
+#
+#snippet art
+#	assert_redirected_to ${1::action => "${2:index}"}
+#
+#snippet vu
+#	validates_uniqueness_of :${1:attribute}
+#
+#snippet mapr
+#	${1:map}.resource :${2:resource}
+#
+#snippet hmd
+#	has_many :<+object+>s<+, :class_name => "<+object+>", :foreign_key => "<+reference+>_id"+>, :dependent => :destroy<++>
+#
+#snippet mccc
+#	t.column :${1:title}, :${2:string}
+#
+#snippet artnpp
+#	assert_redirected_to <+<+parent+>_<+child+>_path(<+@<+parent+>+>)+>
+#
+#snippet maprs
+#	${1:map}.resources :${2:resource}
+#
+#snippet defindex
+#	def index
+#		@${1:model_class_name} = ${2:ModelClassName}.all
+#
+#		respond_to do |wants|
+#			wants.html # index.html.erb
+#			wants.xml  { render :xml => @$1s }
+#		end
+#	end${3}
+#
+#snippet tctss
+#	t.timestamps
+#	${1}
+#
+#snippet tcda
+#	t.date :${1:title}
+#	${2}
+#
+#snippet rjson
+#	render :json => ${1:text to render}
+#
+#snippet ra
+#	render :action => "${1:action}"
+#
+#snippet ril
+#	render :inline => "${1:<%= 'hello' %>}", :locals => { ${2::name} => "${3:value}"${4} }
+#
+#snippet vl
+#	validates_length_of :${1:attribute}, :within => ${2:3}..${3:20}
+#
+#snippet mrnc
+#	rename_column :${1:table}, :${2:old}, :${3:new}
+#
+#snippet defshow
+#	def show
+#		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+#
+#		respond_to do |wants|
+#			wants.html # show.html.erb
+#			wants.xml  { render :xml => @$1 }
+#		end
+#	end${3}
+#
+#snippet tcts
+#	t.timestamp :${1:title}
+#	${2}
+#
+#snippet bt
+#	belongs_to :${1:association}
+#
+#snippet rn
+#	render :nothing => ${1:true}
+#
+#snippet ri
+#	render :inline => "<+<%= 'hello' %>+>"
+#
+#snippet ral
+#	render :action => "${1:action}", :layout => "${2:layoutname}"
+#
+#snippet log
+#	RAILS_DEFAULT_LOGGER.${1:debug} ${2}
+#
+#snippet rit
+#	render :inline => "${1:<%= 'hello' %>}", :type => ${2::rxml}
+#
+#snippet sweeper
+#	class ${1:ModelClassName}Sweeper < ActionController::Caching::Sweeper
+#		observe $1
+#
+#		def after_save(${2:model_class_name})
+#			expire_cache($2)
+#		end
+#
+#		def after_destroy($2)
+#			expire_cache($2)
+#		end
+#
+#		def expire_cache($2)
+#			expire_page
+#		end
+#	end
+#
+#snippet rtl
+#	render :text => "${1:text to render}", :layout => "${2:layoutname}"
+#
+#snippet defedit
+#	def edit
+#		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+#	end
+#
+#snippet rl
+#	render :layout => "${1:layoutname}"
+#
+#snippet hmt
+#	has_many :${1:object}, :through => :${2:object}
+#
+#snippet ve
+#	validates_exclusion_of :${1:attribute}, :in => ${2:%w( mov avi )}
+#
+#snippet mapc
+#	${1:map}.${2:connect} '${3:controller/:action/:id}'
+#
+#snippet asre
+#	assert_response :${1:success}, @response.body${2}
+#
+#snippet ncl
+#	named_scope :<+name+>, lambda { |<+param+>| { :conditions => <+['<+<+field+> = ?+>', <+param+>]+> } }
+#
+#snippet vao
+#	validates_acceptance_of :${1:terms}
+#
+#snippet tct
+#	t.text :${1:title}
+#	${2}
+#
+#snippet tcs
+#	t.string :${1:title}
+#	${2}
+#
+#snippet fina
+#	find(:all<+, :conditions => ['<+<+field+> = ?+>', <+true+>]+>)
+#
+#snippet mp
+#	map(&:${1:id})
+#
+#snippet logw
+#	logger.warn { "${1:message}" }${2}
+#
+#snippet defcreate
+#	def create
+#		@${1:model_class_name} = ${2:ModelClassName}.new(params[:$1])
+#
+#		respond_to do |wants|
+#			if @$1.save
+#				flash[:notice] = '$2 was successfully created.'
+#				wants.html { redirect_to(@$1) }
+#				wants.xml  { render :xml => @$1, :status => :created, :location => @$1 }
+#			else
+#				wants.html { render :action => "new" }
+#				wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+#			end
+#		end
+#	end${3}
+#
+#snippet rxml
+#	render :xml => ${1:text to render}
+#
+#snippet rtlt
+#	render :text => "${1:text to render}", :layout => ${2:true}
+#
+#snippet wants
+#	wants.<+js|xml|html+> <+{ <++> }+>
+#
+#snippet nc
+#	named_scope :<+name+><+, :joins => :<+table+>+>, :conditions => <+['<+<+field+> = ?+>', <+true+>]+>
+#
+#snippet rest
+#	respond_to do |wants|
+#		wants.${1:html} <+{ <++> }+>
+#	end
+#
+#snippet defupdate
+#	def update
+#		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+#
+#		respond_to do |wants|
+#			if @$1.update_attributes(params[:$1])
+#				flash[:notice] = '$2 was successfully updated.'
+#				wants.html { redirect_to(@$1) }
+#				wants.xml  { head :ok }
+#			else
+#				wants.html { render :action => "edit" }
+#				wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+#			end
+#		end
+#	end${3}
+#
+#snippet vf
+#	validates_format_of :${1:attribute}, :with => /${2:regex}/
+#
+#snippet mbs
+#	before_save :${1:method}
+#
+#snippet mcc
+#	change_column :${1:table}, :${2:column}, :${3:type}
+#
+
+
+
+
+
+#imported from another lib, test before use
+# ruby-shoulda
+#
+#snippet selal
+#	should_ensure_length_at_least :${1:field}, ${2:min_length}
+#
+#snippet shm
+#	should_have_many :${1:association}
+#
+#snippet context
+#	context "${1:context}" do
+#
+#		${2}
+#
+#	end
+#
+#snippet samao
+#	should_allow_mass_assignment_of :${1:field}
+#
+#snippet shdc
+#	should_have_db_columns :${1:field}
+#
+#snippet svno
+#	should_validate_numericality_of :${1:field}
+#
+#snippet svpo
+#	should_validate_presence_of :${1:field}
+#
+#snippet sbt
+#	should_belong_to :${1:association}
+#
+#snippet svuo
+#	should_validate_uniqueness_of :${1:field}, :scoped_to => ${2:arrayofnames}
+#
+#snippet shim
+#	should_have_instance_methods :${1:method}
+#
+#snippet snamao
+#	should_not_allow_mass_assignment_of :${1:field}
+#
+#snippet sevir
+#	should_ensure_value_in_range :${1:field}, ${2:start}..${3:end}
+#
+#snippet svao
+#	should_validate_acceptance_of :${1:field}
+#
+#snippet shi
+#	should_have_indices :${1:field}
+#
+#snippet shcm
+#	should_have_class_methods :${1:method}
+#
+#snippet sho
+#	should_have_one :${1:association}
+#
+#snippet shabtm
+#	should_have_and_belong_to_many :${1:association}
+#
+#snippet seli
+#	should_ensure_length_is :${1:field}, ${2:length}
+#
+#snippet savf
+#	should_allow_values_for :${1:field}, "${2:value}"
+#
+#snippet setup
+#	setup do
+#		${1}
+#	end
+#
+#snippet snavf
+#	should_not_allow_values_for :${1:field}, "${2:value}"
+#
+#snippet selir
+#	should_ensure_length_in_range :${1:field}, ${2:start}..${3:end}
+#
+#snippet shroa
+#	should_have_read_only_attributes :${1:field}
+
+
+
+
+
+#imported from another lib, test before use
+# ruby
+#
+#snippet select
+#	select { |${1:element}| ${2:body} }
+#
+#snippet fopen
+#	File.open(${1:path}, "${2:rwab}") { |${3:file}| ${4} }
+#
+#snippet eawido
+#	each_with_index do |${1:element},${2:i}|
+#		${3:body}
+#	end
+#
+#
+#snippet asr
+#	assert_raise(${1:Exception}) { ${2} }
+#
+#snippet map
+#	map { |${1:element}| ${2:body} }
+#
+#snippet asb
+#	assert_boolean ${1:actual}
+#
+#snippet sorto
+#	sort do |${1:x},${2:y}|
+#		${3:body}
+#	end
+#
+#snippet r
+#	attr_reader :${1:attr_names}
+#
+#snippet http_get
+#	require 'net/http'
+#	res = Net::HTTP.get URI.parse('${1:url}')
+#
+#snippet zip
+#	zip(${1:enums}) { |${2:row}| ${3} }
+#
+#snippet astr
+#	assert_true ${1:actual}
+#
+#snippet each_with_index
+#	each_with_index { |${1:element},${2:i}| ${3:} }
+#
+#snippet elsif
+#	elsif ${1:condition}
+#		${2}
+#
+#snippet asi
+#	assert_include ${1:collection}, ${2:object}
+#
+#snippet ascd
+#	assert_const_defined ${1:object}, ${2:constant_name}
+#
+#snippet tas
+#	desc "${1:Task description}"
+#	task :${2:task_name}${3: => [:dependent, :tasks]} do
+#		${4}
+#	end
+#
+#snippet am
+#	alias_method :${1:new_name}, :${2:old_name}
+#
+#snippet asp
+#	assert_predicate ${1:object}, ${2:predicate}
+#
+#snippet eawi
+#	each_with_index { |${1:element},${2:i}| ${3:} }
+#
+#snippet each_with_indexo
+#	each_with_index do |${1:element},${2:i}|
+#		${3:body}
+#	end
+#
+#
+#snippet injecto
+#	inject do |${1:total},${2:next}|
+#		${3:body}
+#	end
+#
+#snippet unless
+#	unless ${1:condition}
+#		${2}
+#	end
+#
+#snippet asid
+#	assert_in_delta ${1:expected_float}, ${2:actual_float}, ${3:delta_float}
+#
+#snippet class
+#	class ${1:`Snippet_RubyClassNameFromFilename()`}${2}
+#		${3}
+#	end
+#
+#snippet xmlr
+#	REXML::Document.new(File.read(${1:path}))
+#
+#snippet bm
+#	TESTS = ${1:10_000}
+#	Benchmark.bmbm do |results|
+#		${2}
+#	end
+#
+#snippet inject
+#	inject { |${1:total},${2:next}| ${3:body} }
+#
+#snippet do
+#	do
+#		${1}
+#	end
+#
+#snippet asrko
+#	assert_raise_kind_of(${1:kinds...}) { ${2:block} }
+#
+#snippet as
+#	assert ${1:test}, "${2:failure_message}"
+#
+#snippet eado
+#	each do |${1:element}|
+#		${2:body}
+#	end
+#
+#snippet aspne
+#	assert_path_not_exist ${1:path}
+#
+#snippet asse
+#	assert_send ${1:send_array}
+#
+#snippet sinc
+#	class << self; self end
+#
+#snippet w
+#	attr_writer :${1:attr_names}
+#
+#snippet aso
+#	assert_operator ${1:left}, :${2:operator}, ${3:right}
+#
+#snippet asnp
+#	assert_not_predicate ${1:object}, ${2:predicate}
+#
+#snippet asnr
+#	assert_nothing_raised { ${1:block} }
+#
+#snippet asrt
+#	assert_respond_to ${1:object}, :${2:method}
+#
+#snippet rejecto
+#	reject do |${1:element}|
+#		${2:body}
+#	end
+#
+#snippet ope
+#	open(${1:path}, "${2:rwab}") { |${3:io}| ${4} }
+#
+#snippet asnie
+#	assert_not_in_epsilon ${1:expected_float}, ${2:actual_float}
+#
+#snippet injdo
+#	inject(${1:init}) do |${2:total}, ${3:next}|
+#		${4:body}
+#	end
+#
+#snippet defs
+#	def self.${1:class_method_name}
+#		${2}
+#	end
+#
+#snippet ife
+#	if ${1:condition}
+#		${2}
+#	else
+#	end
+#
+#snippet Pn
+#	PStore.new(${1})
+#
+#snippet each
+#	each { |${1:element}| ${2:body} }
+#
+#snippet reject
+#	reject { |${1:element}| ${2:body} }
+#
+#snippet asncd
+#	assert_not_const_defined ${1:object}, ${2:constant_name}
+#
+#snippet mapo
+#	map do |${1:element}|
+#		${2:body}
+#	end
+#
+#snippet asn
+#	assert_nil ${1:instance}
+#
+#snippet defi
+#	def initialize${1}
+#		${2}
+#	end
+#
+#snippet aspe
+#	assert_path_exist ${1:path}
+#
+#snippet asrm
+#	assert_raise_message ${1:expected_message}
+#
+#snippet while
+#	while ${1:condition}
+#		${2}
+#	end
+#
+#snippet defmm
+#	def method_missing(meth, *args, &blk)
+#		${1}
+#	end
+#
+#snippet dglob
+#	Dir.glob(${1:"<+dir}"+>) { |${2:file}| ${3} }
+#
+#snippet Ml
+#	File.open(${1:dump_path}, "rb") { |${2:file}| Marshal.load(${3:$2}) }
+#
+#snippet mod
+#	module ${1:`Snippet_RubyClassNameFromFilename()`}
+#		${2}
+#	end
+#
+#snippet sort
+#	sort { |${1:x},${2:y}| ${3:body} }
+#
+#snippet dop
+#	do |${1:param}|
+#		${2}
+#	end
+#
+#snippet mapdo
+#	map do |${1:element}|
+#		${2:body}
+#	end
+#
+#snippet asns
+#	assert_not_same ${1:unexpected}, ${2:actual}
+#
+#snippet xpa
+#	elements.each(${1}) do |${2:node}|
+#		${3}
+#	end
+#
+#snippet ast
+#	assert_throws(:${1:expected}) { ${2} }
+#
+#snippet fread
+#	File.read(${1})
+#
+#snippet http_post
+#	require 'net/http'
+#	res = Net::HTTP.post_form URI.parse('${1:url}')${2:, params}
+#
+#snippet case
+#	case ${1}
+#	when ${2}
+#	else
+#		${3}
+#	end
+#
+#snippet Yl
+#	File.open(${1:path_to_yml}) { |${2:file}| YAML.load(${3:$2}) }
+#
+#snippet rw
+#	attr_accessor :${1:attr_names}
+#
+#snippet ip
+#	ip_addr = request.env['REMOTE_ADDR']
+#
+#snippet asni
+#	assert_not_include ${1:collection}, ${2:object}
+#
+#snippet detect
+#	detect { |${1:element}| ${2:body} }
+#
+#snippet asnse
+#	assert_not_send ${1:send_array}
+#
+#snippet asnn
+#	assert_not_nil ${1:instance}
+#
+#snippet if
+#	if ${1:condition}
+#		${2}
+#	end
+#
+#snippet asnrt
+#	assert_not_respond_to ${1:object}, ${2:method}
+#
+#snippet asfa
+#	assert_fail_assertion { ${1:block} }
+#
+#snippet asnem
+#	assert_not_empty ${1:object}
+#
+#snippet asam
+#	assert_alias_method ${1:object}, ${2:alias_name}, ${3:original_name}
+#
+#snippet asnid
+#	assert_not_in_delta ${1:expected_float}, ${2:actual_float}
+#
+#snippet deft
+#	def test_${1:case_name}
+#		${2}
+#	end
+#
+#snippet rep
+#	results.report("${1:name}:") { TESTS.times { ${2} } }
+#
+#snippet asm
+#	assert_match /${1:expected_pattern}/, ${2:actual_string}
+#
+#snippet asnm
+#	assert_no_match /${1:unexpected_pattern}/, ${2:actual_string}
+#
+#snippet asnt
+#	assert_nothing_thrown { ${1} }
+#
+#snippet ase
+#	assert_equal ${1:expected}, ${2:actual}
+#
+#snippet ea
+#	each { |${1:element}| ${2:body} }
+#
+#snippet def
+#	def ${1:name}
+#		${2}
+#	end
+#
+#snippet asio
+#	assert_instance_of ${1:ExpectedClass}, ${2:actual_instance}
+#
+#snippet fileeach
+#	File.foreach(${1:"<+path}"+>) { |${2:line}| ${3} }
+#
+#snippet asko
+#	assert_kind_of ${1:ExpectedKind}, ${2:actual_instance}
+#
+#snippet asf
+#	assert_false ${1:actual}
+#
+#snippet module
+#	module ${1:`Snippet_RubyClassNameFromFilename()`}
+#		module ClassMethods
+#			${2}
+#		end
+#
+#		module InstanceMethods
+#
+#		end
+#
+#		def self.included(receiver)
+#			receiver.extend         ClassMethods
+#			receiver.send :include, InstanceMethods
+#		end
+#	end
+#
+#snippet asc
+#	assert_compare ${1:expected}, ${2:operator}, ${3:actual}
+#
+#snippet selecto
+#	select do |${1:element}|
+#		${2:body}
+#	end
+#
+#snippet asem
+#	assert_empty ${1:object}
+#
+#snippet unlesse
+#	unless ${1:condition}
+#		${2}
+#	else
+#	end
+#
+#snippet Yd
+#	File.open(${1:path_to_yml}, "w") { |${2:file}| YAML.dump(${3:obj}, ${4:$2}) }
+#
+#snippet eacho
+#	each do |${1:element}|
+#		${2:body}
+#	end
+#
+#snippet pathhere
+#	File.join(File.dirname(__FILE__), *%w[${1:rel_path_here}])
+#
+#snippet nam
+#	namespace :${1:namespace} do
+#		${2}
+#	end
+#
+#snippet task
+#	desc "${1:Task description}"
+#	task :${2:task_name}${3: => [:dependent, :tasks]} do
+#		${4}
+#	end
+#
+#snippet Md
+#	File.open(${1:dump_path}, "wb") { |${2:file}| Marshal.dump(${3:obj}, ${4:$2}) }
+#
+#snippet classe
+#	class ${1:ErrorClassName} < ${2:StandardError}; end${3}
+#
+#snippet asne
+#	assert_not_equal ${1:unexpected}, ${2:actual}
+#
+#snippet asie
+#	assert_in_epsilon ${1:expected_float}, ${2:actual_float}
+#
+#snippet detecto
+#	detect do |${1:element}|
+#		${2:body}
+#	end
+#
+#snippet inj
+#	inject(${1:init}) { |${2:total}, ${3:next}| ${4:body} }
+#
+#snippet tc
+#	require "test/unit"
+#
+#	require "${1:library_file_name}"
+#
+#	class Test${2:`Snippet_RubyClassNameFromFilename()`} < Test::Unit::TestCase
+#		def test_${3:case_name}
+#			${4}
+#		end
+#	end
+#
+
+
+
+
+#imported from another lib, test before use
+# ruby
+#snippet shp
+#	${1:target}.should be_${2:predicate}
+#
+#snippet shnbko
+#	${1:target}.should_not be_a_kind_of(${2:klass})
+#	${3}
+#
+#snippet she
+#	${1:target}.should eql(${2:value})
+#	${3}
+#
+#snippet shc
+#	lambda do
+#		${1}
+#	end.should change(${2:target}, :${3:method}).from(${4:old_value}).to(${5:new_value}).by(${6:change})
+#
+#snippet shredt
+#	response.should redirect_to(${1:url})
+#	${2}
+#
+#snippet shbc
+#	${1:target}.should be_close(${2:result}, ${3:tolerance})
+#	${4}
+#
+#snippet anra
+#	and_raise(${1:exception})
+#
+#snippet mat
+#	class ${1:ReverseTo}
+#		def initialize(${2:param})
+#			@$2 = $2
+#		end
+#
+#		def matches?(actual)
+#			@actual = actual
+#			# Satisfy expectation here. Return false or raise an error if it's not met.
+#			${3:@actual.reverse.should == @$2}
+#			true
+#		end
+#
+#		def failure_message
+#			"expected #{@actual.inspect} to ${4} #{@$2.inspect}, but it didn't"
+#		end
+#
+#		def negative_failure_message
+#			"expected #{@actual.inspect} not to ${5} #{@$2.inspect}, but it did"
+#		end
+#	end
+#
+#	def ${6:reverse_to}(${7:expected})
+#		${8}.new($7)
+#	end
+#
+#snippet shrt
+#	${1:target}.should respond_to(:${2:sym})
+#	${3}
+#
+#snippet on
+#	once
+#
+#snippet shnre
+#	${1:target}.should_not raise_error(${2:error})
+#	${3}
+#
+#snippet shnt
+#	lambda { ${1} }.should_not throw_symbol(:${2:symbol})
+#	${3}
+#
+#snippet shtemp
+#	response.should render_template(:${1:template})
+#	${2}
+#
+#snippet dests
+#	describe ${1:Type}, "${2:description}" do
+#		${3}
+#	end
+#
+#snippet it
+#	it "${1}" do
+#		${2}
+#	end
+#
+#snippet shhr
+#	${1:target}.should have(${2:n}).records
+#	${3}
+#
+#snippet ex
+#	exactly(${1:n}).times
+#
+#snippet shn
+#	${1:target}.should_not == ${2:value}
+#	${3}
+#
+#snippet shnm
+#	${1:target}.should_not match(/${2:regexp}/)
+#	${3}
+#
+#snippet shhal
+#	${1:target}.should have_at_least(${2:num}).${3:things}
+#	${4}
+#
+#snippet mm
+#	mock_model(${1:model})${2}
+#
+#snippet shnbio
+#	${1:target}.should_not be_instance_of(${2:klass})
+#	${3}
+#
+#snippet shbr
+#	response.should be_redirect
+#	${1}
+#
+#snippet moc
+#	${1:var} = mock("${2:mock_name}"${3:, :null_object => true})
+#	${4}
+#
+#snippet any
+#	and_yield(${1:values})
+#
+#snippet wia
+#	with(${1:args})
+#	${2}
+#
+#snippet shham
+#	${1:target}.should have_at_most(${2:num}).${3:things}
+#	${4}
+#
+#snippet shnp
+#	${1:target}.should_not be_${2:predicate}
+#
+#snippet shnredt
+#	response.should_not redirect_to(${1:url})
+#	${2}
+#
+#snippet shnr
+#	${1:mock}.should_not_receive(:${2:message})${3}
+#	${4}
+#
+#snippet conn
+#	controller_name :${1:controller}
+#
+#snippet its
+#	it "should ${1:do something}" do${2}
+#
+#snippet des
+#	describe "${1:subject}" do
+#		${2}
+#	end
+#
+#snippet shh
+#	${1:target}.should have(${2:num}).${3:things}
+#	${4}
+#
+#snippet sheq
+#	${1:target}.should equal(${2:value})
+#	${3}
+#
+#snippet bef
+#	before(${1::each}) do
+#		${2}
+#	end
+#
+#snippet shns
+#	${1:target}.should_not satisfy { |${2:obj}| ${3} }
+#	${4}
+#
+#snippet resh
+#	require File.dirname(__FILE__) + '/../spec_helper'
+#
+#snippet sef
+#	shared_examples_for "${1:do something}" do
+#	  ${2}
+#	end
+#
+#snippet shs
+#	${1:target}.should satisfy { |${2:obj}| ${3} }
+#	${4}
+#
+#snippet aft
+#	after(${1::each}) do
+#		${2}
+#	end
+#
+#snippet shne
+#	${1:target}.should_not eql(${2:value})
+#	${3}
+#
+#snippet anr
+#	and_return(${1:value})
+#
+#snippet shnc
+#	lambda do
+#		${1}
+#	end.should_not change(${2:target}, :${3:method})
+#
+#snippet desrc
+#	describe ${1:controller}, "${2:GET|POST|PUT|DELETE} ${3:/some/path}${4}" do
+#		${5}
+#	end
+#
+#snippet shnb
+#	${1:target}.should_not be(${2:result})
+#	${3}
+#
+#snippet atm
+#	at_most(${1:n}).times
+#
+#snippet dest
+#	describe ${1:Type} do
+#		${2}
+#	end
+#
+#snippet isbl
+#	it_should_behave_like '${1:do something}'
+#
+#snippet shneq
+#	${1:target}.should_not equal(${2:value})
+#	${3}
+#
+#snippet shnrt
+#	${1:target}.should_not respond_to(:${2:sym})
+#	${3}
+#
+#snippet shbio
+#	${1:target}.should be_instance_of(${2:class})
+#	${3}
+#
+#snippet sht
+#	${1:target}.should throw_symble(:${2:symbol})
+#	${3}
+#
+#snippet ant
+#	and_throw(${1:sym})
+#
+#snippet shdm
+#	${1:target}.should match(/${2:regexp}/)
+#	${3}
+#
+#snippet shnbc
+#	${1:target}.should_not be_close(${2:result}, ${3:tolerance})
+#	${4}
+#
+#snippet sh
+#	${1:target}.should == ${2:value}
+#	${3}
+#
+#snippet shb
+#	${1:target}.should be(${2:result})
+#	${3}
+#
+#snippet anrb
+#	and_return { ${1} }
+#
+#snippet mocw
+#	Spec::Runner.configure do |config|
+#		config.mock_with :${1:mocha|flexmock|rr}
+#	end
+#
+#snippet shnbs
+#	response.should_not be_success
+#	${1}
+#
+#snippet shr
+#	${1:mock}.should_receive(:${2:message})${3}
+#	${4}
+#
+#snippet atl
+#	at_least(${1:n}).times
+#
+#snippet desc
+#	require 'spec_helper'
+#
+#	describe ${1:`Snippet_RubyClassNameFromFilename()`} do
+#		${2}
+#	end
+#
+#snippet shnbr
+#	response.should_not be_redirect
+#	${1}
+#
+#snippet shbs
+#	response.should be_success
+#	${1}
+#
+#snippet shre
+#	${1:target}.should raise_error(${2:error})
+#	${3}
+#
+#snippet shbko
+#	${1:target}.should be_a_kind_of(${2:class})
+#	${3}
+#
+#snippet annot
+#	any_number_of_times
+#
+#snippet tw
+#	twice
+#
+
+
+#imported from another lib, test before use
+# ruby-factorygirl
+#snippet fac
+#	Factory(:${1}, ${2})${3}
+#snippet facs
+#	Factory.sequence :${1:sequence-name} do |${2:m}|
+#		${3}
+#	end
+#snippet facn
+#	Factory.next(:${1:sequence-name})${2}	
+#snippet facd
+#	Factory.define(:${1:model}) do |${2:f}|
+#		${3}
+#	end
+#	${4}
+#snippet fac
+#	Factory.build(:${1}, ${2})${3}
+#	
