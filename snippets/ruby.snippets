@@ -243,6 +243,10 @@ snippet ead
 	each do |${1:e}|
 		${2}
 	end
+snippet each
+	each do |${1:e}|
+		${2}
+	end
 snippet eab
 	each_byte { |${1:byte}| ${2} }
 snippet eac- each_char { |chr| .. }
@@ -389,11 +393,11 @@ snippet seld
 	end
 snippet lam
 	lambda { |${1:args}| ${2} }
-snippet doo
+snippet do
 	do
 		${1}
 	end
-snippet dov
+snippet doo
 	do |${1:variable}|
 		${2}
 	end
@@ -922,17 +926,19 @@ snippet tref
 	t.references :${1:model}
 #rspec
 snippet it
-	it "${1:spec_name}" do
+	it { should ${1} }
+snippet itsh
+	it "should ${1:do something}" do
 		${2}
 	end
-snippet itp
-	it "${1:spec_name}"
-	${2}
 snippet its
 	its(:${1:method}) { should ${2} }
 snippet itsn
 	its(:${1:method}) { should_not ${2} }
-
+snippet des
+	describe "${1:subject}" do
+		${2}
+	end
 snippet desc
 	describe ${1:class_name} do
 		${2}
@@ -941,10 +947,14 @@ snippet cont
 	context "${1:message}" do
 		${2}
 	end
+snippet be
+	before { ${1} }
 snippet bef
 	before :${1:each} do
 		${2}
 	end
+snippet af
+	after { ${1} }
 snippet aft
 	after :${1:each} do
 		${2}
@@ -1954,7 +1964,7 @@ snippet itb
 
 
 #imported from another lib, test before use
-# ruby
+# ruby rspec
 #snippet shp
 #	${1:target}.should be_${2:predicate}
 #
@@ -2032,11 +2042,6 @@ snippet itb
 #		${3}
 #	end
 #
-#snippet it
-#	it "${1}" do
-#		${2}
-#	end
-#
 #snippet shhr
 #	${1:target}.should have(${2:n}).records
 #	${3}
@@ -2096,13 +2101,6 @@ snippet itb
 #snippet conn
 #	controller_name :${1:controller}
 #
-#snippet its
-#	it "should ${1:do something}" do${2}
-#
-#snippet des
-#	describe "${1:subject}" do
-#		${2}
-#	end
 #
 #snippet shh
 #	${1:target}.should have(${2:num}).${3:things}
@@ -2112,10 +2110,6 @@ snippet itb
 #	${1:target}.should equal(${2:value})
 #	${3}
 #
-#snippet bef
-#	before(${1::each}) do
-#		${2}
-#	end
 #
 #snippet shns
 #	${1:target}.should_not satisfy { |${2:obj}| ${3} }
@@ -2133,10 +2127,6 @@ snippet itb
 #	${1:target}.should satisfy { |${2:obj}| ${3} }
 #	${4}
 #
-#snippet aft
-#	after(${1::each}) do
-#		${2}
-#	end
 #
 #snippet shne
 #	${1:target}.should_not eql(${2:value})
@@ -2162,40 +2152,7 @@ snippet itb
 #snippet atm
 #	at_most(${1:n}).times
 #
-#snippet dest
-#	describe ${1:Type} do
-#		${2}
-#	end
 #
-#snippet isbl
-#	it_should_behave_like '${1:do something}'
-#
-#snippet shneq
-#	${1:target}.should_not equal(${2:value})
-#	${3}
-#
-#snippet shnrt
-#	${1:target}.should_not respond_to(:${2:sym})
-#	${3}
-#
-#snippet shbio
-#	${1:target}.should be_instance_of(${2:class})
-#	${3}
-#
-#snippet sht
-#	${1:target}.should throw_symble(:${2:symbol})
-#	${3}
-#
-#snippet ant
-#	and_throw(${1:sym})
-#
-#snippet shdm
-#	${1:target}.should match(/${2:regexp}/)
-#	${3}
-#
-#snippet shnbc
-#	${1:target}.should_not be_close(${2:result}, ${3:tolerance})
-#	${4}
 #
 #snippet sh
 #	${1:target}.should == ${2:value}
@@ -2205,55 +2162,6 @@ snippet itb
 #	${1:target}.should be(${2:result})
 #	${3}
 #
-#snippet anrb
-#	and_return { ${1} }
-#
-#snippet mocw
-#	Spec::Runner.configure do |config|
-#		config.mock_with :${1:mocha|flexmock|rr}
-#	end
-#
-#snippet shnbs
-#	response.should_not be_success
-#	${1}
-#
-#snippet shr
-#	${1:mock}.should_receive(:${2:message})${3}
-#	${4}
-#
-#snippet atl
-#	at_least(${1:n}).times
-#
-#snippet desc
-#	require 'spec_helper'
-#
-#	describe ${1:`Snippet_RubyClassNameFromFilename()`} do
-#		${2}
-#	end
-#
-#snippet shnbr
-#	response.should_not be_redirect
-#	${1}
-#
-#snippet shbs
-#	response.should be_success
-#	${1}
-#
-#snippet shre
-#	${1:target}.should raise_error(${2:error})
-#	${3}
-#
-#snippet shbko
-#	${1:target}.should be_a_kind_of(${2:class})
-#	${3}
-#
-#snippet annot
-#	any_number_of_times
-#
-#snippet tw
-#	twice
-#
-
 
 #imported from another lib, test before use
 # ruby-factorygirl
